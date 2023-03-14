@@ -1,5 +1,6 @@
 package com.project.api.control;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,12 +8,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.api.model.Person;
+import com.project.api.repository.RepositoryApi;
 
-// marca uma classe como um controlador REST e simplifica a criação de APIs RESTful em um aplicativo Spring Boot.
-@RestController
+
+@RestController // marca uma classe como um controlador REST e simplifica a criação de APIs RESTful em um aplicativo Spring Boot.
 public class Control {
-    // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
-    @GetMapping("/")
+    @Autowired // é usada no Spring Boot para realizar a injeção de dependência automática de um objeto em uma classe.
+    private RepositoryApi action;
+
+    @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
         return "Hello World!";
     }
