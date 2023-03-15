@@ -8,13 +8,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.api.model.Person;
-import com.project.api.repository.RepositoryApi;
+import com.project.api.apiRepository.ApiRepository;
 
 
 @RestController // marca uma classe como um controlador REST e simplifica a criação de APIs RESTful em um aplicativo Spring Boot.
 public class Control {
-    @Autowired // é usada no Spring Boot para realizar a injeção de dependência automática de um objeto em uma classe.
-    private RepositoryApi action;
+    //@Autowired // é usada no Spring Boot para realizar a injeção de dependência automática de um objeto em uma classe.
+    private ApiRepository action;
+
+    @PostMapping("/api")
+    public Person register(@RequestBody Person obj){
+        return action.save(obj);
+    }
 
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
