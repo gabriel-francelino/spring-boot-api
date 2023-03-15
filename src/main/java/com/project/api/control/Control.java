@@ -13,7 +13,7 @@ import com.project.api.apiRepository.ApiRepository;
 
 @RestController // marca uma classe como um controlador REST e simplifica a criação de APIs RESTful em um aplicativo Spring Boot.
 public class Control {
-    //@Autowired // é usada no Spring Boot para realizar a injeção de dependência automática de um objeto em uma classe.
+    @Autowired // é usada no Spring Boot para realizar a injeção de dependência automática de um objeto em uma classe.
     private ApiRepository action;
 
     @PostMapping("/api")
