@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 import com.project.api.model.Person;
 import com.project.api.apiRepository.ApiRepository;
@@ -19,6 +20,11 @@ public class Control {
     @PostMapping("/api")
     public Person register(@RequestBody Person obj){
         return action.save(obj);
+    }
+
+    @GetMapping("/api")
+    public List<Person> select(){
+        return action.findAll();
     }
 
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
