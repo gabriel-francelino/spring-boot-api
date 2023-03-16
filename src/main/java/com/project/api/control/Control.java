@@ -45,6 +45,11 @@ public class Control {
         action.delete(obj);
     }
 
+    @GetMapping("/api/counter")
+    public long counter(){
+        return action.count();
+    }
+
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
         return "Hello World!";
