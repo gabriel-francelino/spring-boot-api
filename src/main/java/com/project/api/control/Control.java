@@ -27,6 +27,11 @@ public class Control {
         return action.findAll();
     }
 
+    @GetMapping("/api/{id}")
+    public Person selectById(@PathVariable int id){
+        return action.findById(id);
+    }
+
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
         return "Hello World!";

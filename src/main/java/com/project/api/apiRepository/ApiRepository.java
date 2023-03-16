@@ -7,4 +7,6 @@ import java.util.List;
 public interface ApiRepository extends CrudRepository<Person, Integer> {
     //Person findById(int id);   
     List<Person> findAll();
+
+    Person findById(int id);
 }
