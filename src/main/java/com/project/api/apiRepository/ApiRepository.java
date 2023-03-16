@@ -9,4 +9,6 @@ public interface ApiRepository extends CrudRepository<Person, Integer> {
     List<Person> findAll();
 
     Person findById(int id);
+
+    List<Person> findByOrderByNameDesc();
 }

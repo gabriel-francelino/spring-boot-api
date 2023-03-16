@@ -50,6 +50,11 @@ public class Control {
         return action.count();
     }
 
+    @GetMapping("/api/orderNames")
+    public List<Person> orderNames(){
+        return action.findByOrderByNameDesc();
+    }
+
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
         return "Hello World!";
