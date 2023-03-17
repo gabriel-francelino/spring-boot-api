@@ -37,6 +37,11 @@ public class ApiService {
 
     // método para buscar pessoas pelo id
     public ResponseEntity<?> selectById(int id){
-        return new ResponseEntity<>(action.findById(id), HttpStatus.OK);
+        if (action.countById(id) == 0) {
+            msg.setMsg("Not found person");
+            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
+        }else{
+            return new ResponseEntity<>(action.findById(id), HttpStatus.OK);
+        }
     }
 }
