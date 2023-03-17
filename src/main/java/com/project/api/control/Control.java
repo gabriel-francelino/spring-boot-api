@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import com.project.api.model.Person;
+import com.project.api.service.ApiService;
 import com.project.api.apiRepository.ApiRepository;
 
 
@@ -21,9 +22,12 @@ public class Control {
     @Autowired // é usada no Spring Boot para realizar a injeção de dependência automática de um objeto em uma classe.
     private ApiRepository action;
 
+    @Autowired
+    private ApiService service;
+
     @PostMapping("/api")
-    public Person register(@RequestBody Person obj){
-        return action.save(obj);
+    public ResponseEntity<?> register(@RequestBody Person obj){
+        return service.register(obj);
     }
 
     @GetMapping("/api")
