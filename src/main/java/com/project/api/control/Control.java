@@ -81,6 +81,11 @@ public class Control {
     //     return action.sumAges();
     // }
 
+    @GetMapping("/api/ageGreaterEqual")
+    public List<Person> ageGreaterEqual(){
+        return action.ageGreaterEqual(23);
+    }
+
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
         return "Hello World!";
