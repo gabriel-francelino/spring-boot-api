@@ -18,8 +18,8 @@ public class Person {
     public int getId() {
         return id;
     }
-    public void setId(int codigo) {
-        this.id = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
     public String getName() {
         return name;
