@@ -13,4 +13,6 @@ public interface ApiRepository extends CrudRepository<Person, Integer> {
     List<Person> findByOrderByNameDesc();
 
     List<Person> findByNameOrderByAgeDesc(String name);
+
+    List<Person> findByNameContaining(String term);
 }

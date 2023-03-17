@@ -60,6 +60,11 @@ public class Control {
         return action.findByNameOrderByAgeDesc("Gabriel");
     }
 
+    @GetMapping("/api/nameContains")
+    public List<Person> nameContains(){
+        return action.findByNameContaining("el");
+    }
+
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
         return "Hello World!";
