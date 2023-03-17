@@ -11,15 +11,15 @@ import jakarta.persistence.Table;
 public class Person {
     @Id // responsável pela criação da primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) // responsável pela geração automatica da PK de maneira crescente
-    private int codigo;
+    private int id;
     private String name;
     private int age;
     
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int codigo) {
+        this.id = codigo;
     }
     public String getName() {
         return name;
