@@ -34,4 +34,9 @@ public class ApiService {
     public ResponseEntity<?> select(){
         return new ResponseEntity<>(action.findAll(), HttpStatus.OK);
     }
+
+    // método para buscar pessoas pelo id
+    public ResponseEntity<?> selectById(int id){
+        return new ResponseEntity<>(action.findById(id), HttpStatus.OK);
+    }
 }

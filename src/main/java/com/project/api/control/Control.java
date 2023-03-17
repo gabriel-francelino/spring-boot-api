@@ -36,8 +36,8 @@ public class Control {
     }
 
     @GetMapping("/api/{id}")
-    public Person selectById(@PathVariable int id){
-        return action.findById(id);
+    public ResponseEntity<?> selectById(@PathVariable int id){
+        return service.selectById(id);
     }
 
     @PutMapping("/api") // é usado para atualizar um recurso existente em um servidor usando uma solicitação HTTP PUT
