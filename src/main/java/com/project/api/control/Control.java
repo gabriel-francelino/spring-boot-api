@@ -1,6 +1,8 @@
 package com.project.api.control;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -105,5 +107,10 @@ public class Control {
     @PostMapping("/person") // é usada para mapear solicitações HTTP POST a métodos de controlador específicos.
     public Person person(@RequestBody Person p){ // é usada para indicar que um parâmetro de método deve ser vinculado ao corpo de uma solicitação HTTP.
         return p;
+    }
+
+    @GetMapping("/status")
+    public ResponseEntity<?> status(){
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
