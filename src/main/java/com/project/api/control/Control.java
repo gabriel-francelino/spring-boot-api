@@ -31,8 +31,8 @@ public class Control {
     }
 
     @GetMapping("/api")
-    public List<Person> select(){
-        return action.findAll();
+    public ResponseEntity<?> select(){
+        return service.select();
     }
 
     @GetMapping("/api/{id}")
