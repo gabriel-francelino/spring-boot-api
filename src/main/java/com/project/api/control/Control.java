@@ -65,6 +65,16 @@ public class Control {
         return action.findByNameContaining("el");
     }
 
+    @GetMapping("/api/startsWith")
+    public List<Person> startsWith(){
+        return action.findByNameStartsWith("k");
+    }
+
+    @GetMapping("/api/endsWith")
+    public List<Person> endsWith(){
+        return action.findByNameEndsWith("y");
+    }
+
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){
         return "Hello World!";
