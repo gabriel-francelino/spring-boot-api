@@ -17,6 +17,7 @@ public class ApiService {
     @Autowired
     private ApiRepository action; // uma boa prática é usar o repositorio na classe de serviço
 
+    // método para cadastrar pessoas
     public ResponseEntity<?> register(Person obj){
         if (obj.getName().equals("")) {
             msg.setMsg("The name cannot be null");
@@ -27,5 +28,10 @@ public class ApiService {
         }
 
         return new ResponseEntity<>(action.save(obj), HttpStatus.CREATED);
+    }
+
+    // método para buscar pessoas
+    public ResponseEntity<?> select(){
+        return new ResponseEntity<>(action.findAll(), HttpStatus.OK);
     }
 }
