@@ -75,10 +75,11 @@ public class Control {
         return action.findByNameEndsWith("y");
     }
 
-    @GetMapping("/api/sumAges")
-    public int sumAges(){
-        return action.sumAges();
-    }
+    // ERRO NA INSTÂNCIAÇÃO
+    // @GetMapping("/api/sumAges")
+    // public int sumAges(){
+    //     return action.sumAges();
+    // }
 
     @GetMapping("/") // é usada para mapear solicitações HTTP GET a métodos de controlador específicos.
     public String mensage(){

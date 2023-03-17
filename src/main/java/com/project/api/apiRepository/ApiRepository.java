@@ -21,6 +21,6 @@ public interface ApiRepository extends CrudRepository<Person, Integer> {
 
     List<Person> findByNameEndsWith(String termo);
 
-    @Query("SELECT SUM(p.idade) FROM person p")
-    int sumAges();
+    // @Query(value = "SELECT SUM(age) FROM person", nativeQuery = true)
+    // int sumAges();
 }
