@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import com.project.api.model.Person;
+import com.project.api.repository.ApiRepository;
 import com.project.api.service.ApiService;
-import com.project.api.apiRepository.ApiRepository;
 
 
 @RestController // marca uma classe como um controlador REST e simplifica a criação de APIs RESTful em um aplicativo Spring Boot.

@@ -5,8 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.project.api.apiRepository.ApiRepository;
 import com.project.api.model.Person;
+import com.project.api.repository.ApiRepository;
 
 @Service
 public class ApiService {

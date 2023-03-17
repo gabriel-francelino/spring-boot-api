@@ -1,4 +1,4 @@
-package com.project.api.apiRepository;
+package com.project.api.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
