@@ -81,10 +81,10 @@ public class Control {
     }
 
     // ERRO NA INSTÂNCIAÇÃO
-    // @GetMapping("/api/sumAges")
-    // public int sumAges(){
-    //     return action.sumAges();
-    // }
+    @GetMapping("/api/sumAges")
+    public int sumAges(){
+        return action.sumAges();
+    }
 
     @GetMapping("/api/ageGreaterEqual")
     public List<Person> ageGreaterEqual(){
