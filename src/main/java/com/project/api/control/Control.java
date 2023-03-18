@@ -46,9 +46,8 @@ public class Control {
     }
 
     @DeleteMapping("/api/{id}") // é usado para excluir um recurso existente em um servidor usando uma solicitação HTTP DELETE.
-    public void remove(@PathVariable int id){
-        Person obj = action.findById(id);
-        action.delete(obj);
+    public ResponseEntity<?> remove(@PathVariable int id){
+        return service.remove(id);
     }
 
     @GetMapping("/api/counter")

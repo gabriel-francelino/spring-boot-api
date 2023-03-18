@@ -61,4 +61,18 @@ public class ApiService {
             return new ResponseEntity<>(action.save(obj), HttpStatus.OK);
         }
     }
+
+    // método para remover pessoas
+    public ResponseEntity<?> remove(int id){
+        if (action.countById(id) == 0) {
+            msg.setMsg("Not found person");
+            return new ResponseEntity<>(msg, HttpStatus.NOT_FOUND);
+        }else {
+            Person obj = action.findById(id);
+            action.delete(obj);
+
+            msg.setMsg("Removed successfully");
+            return new ResponseEntity<>(msg, HttpStatus.OK);
+        }
+    }
 }
