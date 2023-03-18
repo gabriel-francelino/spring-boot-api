@@ -27,5 +27,5 @@ public interface ApiRepository extends CrudRepository<Person, Integer> {
     @Query(value = "SELECT * FROM person WHERE age >= :age", nativeQuery = true)
     List<Person> ageGreaterEqual(int age);
 
-    int countById(int id);
+    int countById(int id); // retorna 1 se tiver ocorrencias com esse id e 0 se não tiver
 }

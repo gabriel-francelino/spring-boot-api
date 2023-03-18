@@ -25,9 +25,10 @@ public class ApiService {
         }else if(obj.getAge() < 0){
             msg.setMsg("Invalid age");
             return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
+        }else{
+            return new ResponseEntity<>(action.save(obj), HttpStatus.CREATED);
         }
 
-        return new ResponseEntity<>(action.save(obj), HttpStatus.CREATED);
     }
 
     // método para buscar pessoas
@@ -42,6 +43,22 @@ public class ApiService {
             return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
         }else{
             return new ResponseEntity<>(action.findById(id), HttpStatus.OK);
+        }
+    }
+
+    // método para editar pessoas
+    public ResponseEntity<?> edit(Person obj){
+        if (action.countById(obj.getId()) == 0) {
+            msg.setMsg("Not found person");
+            return new ResponseEntity<>(msg, HttpStatus.NOT_FOUND);
+        }else if (obj.getName().equals("")) {
+            msg.setMsg("It is necessary to enter a name");
+            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
+        }else if(obj.getAge() < 0){
+            msg.setMsg("Invalid age");
+            return new ResponseEntity<>(msg, HttpStatus.BAD_REQUEST);
+        }else{
+            return new ResponseEntity<>(action.save(obj), HttpStatus.OK);
         }
     }
 }

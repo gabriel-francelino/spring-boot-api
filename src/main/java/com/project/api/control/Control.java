@@ -41,8 +41,8 @@ public class Control {
     }
 
     @PutMapping("/api") // é usado para atualizar um recurso existente em um servidor usando uma solicitação HTTP PUT
-    public Person edit(@RequestBody Person obj){
-        return action.save(obj); // save() pode ser usado para cadastrar e atualizar
+    public ResponseEntity<?> edit(@RequestBody Person obj){
+        return service.edit(obj); // save() pode ser usado para cadastrar e atualizar
     }
 
     @DeleteMapping("/api/{id}") // é usado para excluir um recurso existente em um servidor usando uma solicitação HTTP DELETE.
