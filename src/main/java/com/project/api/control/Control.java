@@ -3,18 +3,15 @@ package com.project.api.control;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import com.project.api.model.Person;
 import com.project.api.repository.ApiRepository;
 import com.project.api.service.ApiService;
+
+import ch.qos.logback.core.net.server.Client;
+import jakarta.validation.Valid;
 
 
 @RestController // marca uma classe como um controlador REST e simplifica a criação de APIs RESTful em um aplicativo Spring Boot.
@@ -80,7 +77,6 @@ public class Control {
         return action.findByNameEndsWith("y");
     }
 
-    // ERRO NA INSTÂNCIAÇÃO
     @GetMapping("/api/sumAges")
     public int sumAges(){
         return action.sumAges();
@@ -115,5 +111,10 @@ public class Control {
     @GetMapping("/status")
     public ResponseEntity<?> status(){
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PostMapping("/client")
+    public void client(@Valid @RequestBody Client obj){ //para todas as anotações de validação devemos usar uma anotação chamada @Valid que ficará sempre na rota
+
     }
 }
